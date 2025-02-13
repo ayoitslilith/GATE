@@ -1,0 +1,27 @@
+{
+	"disorders" = [
+		{
+			"name": "Autism Spectrum Disorder"
+			"condition_type": "disorder",
+			
+			"diagnosis_chance": 2,
+			"exerror": 3,
+			"misdiagnoses": ["Asperger's Syndome", "Autist", "Autism Disorder", "Autism Personality Disorder"],
+			
+			"effects": [{
+			"effect_type": "checkMod",
+			"check": "Mind Reading",
+			"mod": -3
+			}],	
+		},
+		{
+			"name": "Major Depressive Disorder"
+			"condition_type": "disorder",
+			
+			"diagnosis_chance": 4,
+			"exerror": 2,
+			""
+			
+		}
+	]
+}
