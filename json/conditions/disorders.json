@@ -1,25 +1,66 @@
 {
-	"disorders" = [
-		{
-			"name": "Autism Spectrum Disorder"
-			"condition_type": "disorder",
+	"disorders": 
+	[
+		{ 
+			"name": "Example Disorder"
+			"exp": "As reference for making future disorders easier, I have written an example disorder. This is not an actual disorder normally applicable to participants in-game, and as such, will cause unpredictable results if used in-game. Consider reporting this to the developer if you see this during normal gameplay."
+			"exp0" : ["The above block is the in-game name and explanation each disorder. Each disorder is randomly selected with (by default) even weight.",
+					  "That being said, this one should be impossible to select."]
 			
-			"diagnosis_chance": 2,
-			"exerror": 3,
-			"misdiagnoses": ["Asperger's Syndome", "Autist", "Autism Disorder", "Autism Personality Disorder"],
+			"diagnosis_diff": 0,
+			"misdiagnosis_diff": 0,
+			"exp1": ["The above block is used for determining the difficulty for a present disorder to be diagnosed (does NOT determine whether the disorder is present)",
+					 "and the difficulty for it to be a misdiagnosis. All random chance events are performed by selecting a random number between 1 and 6, inclusive.",
+					 "A difficulty determines the minimum value for a the random number to hit in order for the check to pass. Modifiers affect the range of values",
+					 "that the random number generator will choose between. For example, a modifier of -2 will cause the generator to select a number between -1 and 4,",
+					 "inclusive."]
+			
+			"effects": [
+				{
+					"effect_type": "check_mod",
+					"check": "Example Check",
+					"val": -2,
+					"exp": ["This is an effect, and the first in the list of example effects. This one is a check modifier (explained in exp1). It is applied every time",
+							"a check is made. This effect type should not be applied in any other case. Additionally, it should only be applied to the specified check."]
+				}
+				{
+					"effect_type": "change_arith",
+					"tags":["life"]
+					"statistic": "Example Statistic",
+					"val": 1,
+					"exp": "This effect adds the listed modifier value to a statistic after any events with the same tag. In this instance, it's the 'life' tag."
+				}
+				{
+					"effect_type": "change_cap",
+					"tags":["social", "example"]
+					"statistic": "Example Statistic",
+					"val": -3,
+					"exp": ["This effect caps the maximum amount a value can change by, positively or negatively. A -3 prevents the statistic from losing more than 3",
+							"points in a given result."] 
+				}
+				{
+					"effect_type": change_
+			]
+				
+				
+		}
+		{
+			"name": "Autism Spectrum Disorder",
+			
+			"diagnosis_diff": 4,
+			"misdiagnosis_diff": 3,
 			
 			"effects": [{
-			"effect_type": "checkMod",
+			"effect_type": "check_mod",
 			"check": "Mind Reading",
-			"mod": -3
+			"val": -3
 			}],	
 		},
 		{
-			"name": "Major Depressive Disorder"
-			"condition_type": "disorder",
+			"name": "Major Depressive Disorder",
 			
-			"diagnosis_chance": 4,
-			"exerror": 2,
+			"diagnosis_diff": 4,
+			"misdiagnosis_diff": 2,
 			""
 			
 		}
